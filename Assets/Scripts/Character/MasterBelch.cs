@@ -4,4 +4,8 @@ using UnityEngine;
 
 public class MasterBelch
 {
+	public void Talk()
+	{
+		Debug.Log("ゲボゲボゲボ、ゲボゲボ、ゲローーップ！");
+	}
 }

@@ -4,4 +4,8 @@ using UnityEngine;
 
 public class Ness
 {
+	public void Talk()
+	{
+		Debug.Log("...");
+	}
 }

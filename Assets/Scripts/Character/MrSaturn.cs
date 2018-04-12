@@ -4,4 +4,8 @@ using UnityEngine;
 
 public class MrSaturn
 {
+	public void Talk()
+	{
+		Debug.Log("ぽえ〜ん");
+	}
 }
