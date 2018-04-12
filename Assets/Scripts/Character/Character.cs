@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Character
+public abstract class Character : MonoBehaviour
 {
 	public string Name { get; set; }
 	public string TalkMessage { get; set; }
