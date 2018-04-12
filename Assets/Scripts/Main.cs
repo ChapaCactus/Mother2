@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Main : MonoBehaviour
 {
+	public List<Character> characters = new List<Character>();
+
 	private void Start()
 	{
 		StartGame();
