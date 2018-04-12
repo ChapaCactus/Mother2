@@ -35,5 +35,14 @@ public class Main : MonoBehaviour
 		var mrSaturn = new NPC();
 		mrSaturn.Name = "どせいさん";
 		mrSaturn.TalkMessage = "ぽえ〜ん";
+
+		ness.Talk();
+		paula.Talk();
+		jeff.Talk();
+		poo.Talk();
+		starman.Talk();
+		masterBelch.Talk();
+		mama.Talk();
+		mrSaturn.Talk();
 	}
 }
