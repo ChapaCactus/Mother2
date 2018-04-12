@@ -4,4 +4,5 @@ using UnityEngine;
 
 public class NPC : Character
 {
+	public static readonly string PrefabPath = "Prefabs/NPC";
 }
