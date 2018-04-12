@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MrSaturn
+public class MrSaturn : NPC
 {
-	public void Talk()
-	{
-		Debug.Log("ぽえ〜ん");
-	}
 }

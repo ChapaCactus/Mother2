@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Paula
+public class Paula : Player
 {
-	public void Talk()
-	{
-		Debug.Log("…わたしもちょっとくらいならアブナイ超能力を使えるのよ。");
-	}
 }

@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Starman
+public class Starman : Enemy
 {
-	public void Talk()
-	{
-		Debug.Log("オマエハ 英雄デハナク タダノムシケラナノダ！");
-	}
 }

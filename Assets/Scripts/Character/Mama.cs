@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Mama
+public class Mama : NPC
 {
-	public void Talk()
-	{
-		Debug.Log("イエーイ！ファイト！ファ・イ・ト♪");
-	}
 }

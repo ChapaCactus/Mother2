@@ -4,10 +4,6 @@ using UnityEngine;
 
 using System.Linq;
 
-public class Jeff
+public class Jeff : Player
 {
-	public void Talk()
-	{
-		Debug.Log("説明はいらないよ。ぼくはジェフ。きみたちに呼ばれて来たんだ。");
-	}
 }

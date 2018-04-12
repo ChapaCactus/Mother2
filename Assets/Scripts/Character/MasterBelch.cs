@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MasterBelch
+public class MasterBelch : Enemy
 {
-	public void Talk()
-	{
-		Debug.Log("ゲボゲボゲボ、ゲボゲボ、ゲローーップ！");
-	}
 }

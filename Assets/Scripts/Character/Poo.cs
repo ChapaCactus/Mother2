@@ -2,10 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Poo
+public class Poo : Player
 {
-	public void Talk()
-	{
-		Debug.Log("おれの名はプー。君達と共に戦う者だ。おれはネスに従う。");
-	}
 }
