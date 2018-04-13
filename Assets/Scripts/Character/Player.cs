@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Character, IDamageable
+public class Player : Character, IDamageable, ITalkable
 {
 	public static readonly string PrefabPath = "Prefabs/Player";
 
