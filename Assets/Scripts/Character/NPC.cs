@@ -5,4 +5,8 @@ using UnityEngine;
 public class NPC : Character, ITalkable
 {
 	public static readonly string PrefabPath = "Prefabs/NPC";
+
+	protected override void OnTriggerEnter2D(Collider2D collision)
+	{
+	}
 }

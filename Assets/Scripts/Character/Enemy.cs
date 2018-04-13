@@ -8,5 +8,13 @@ public class Enemy : Character, IDamageable, ITalkable
 
 	public void Damage(int damage)
 	{
+		Debug.Log(Name + "が、" + damage + "を受けた");
+	}
+
+	protected override void OnTriggerEnter2D(Collider2D collision)
+	{
+		var damageable = collision.GetComponent<IDamageable>();
+		if (damageable != null)
+			damageable.Damage(Power);
 	}
 }
