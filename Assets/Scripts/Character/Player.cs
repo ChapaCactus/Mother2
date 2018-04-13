@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(SpriteRenderer))]
 public class Player : Character, IDamageable, ITalkable, IParty
 {
 	public static readonly string PrefabPath = "Prefabs/Player";

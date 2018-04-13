@@ -5,6 +5,8 @@ using UnityEngine.Assertions;
 
 public abstract class Character : MonoBehaviour
 {
+    private SpriteRenderer _renderer;
+
 	public string Name { get; protected set; }
 	public string TalkMessage { get; protected set; }
 
@@ -13,7 +15,13 @@ public abstract class Character : MonoBehaviour
 
 	public bool IsDead { get { return HP <= 0; } }
 
-	public virtual void Talk()
+    private void Awake()
+    {
+        _renderer = GetComponent<SpriteRenderer>();
+
+    }
+
+    public virtual void Talk()
 	{
 		Debug.Log(Name + " 「" + TalkMessage + "」");
 	}
@@ -25,6 +33,11 @@ public abstract class Character : MonoBehaviour
 		Power = power;
 		HP = hp;
 	}
+
+    public void SetSprite(Sprite sprite)
+    {
+        _renderer.sprite = sprite;
+    }
 
 	protected abstract void OnTriggerEnter2D(Collider2D collision);
 }

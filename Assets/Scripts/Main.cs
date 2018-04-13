@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Main : MonoBehaviour
 {
-	public List<Character> characters = new List<Character>();
 
 	private void Start()
 	{
@@ -17,6 +16,7 @@ public class Main : MonoBehaviour
 		var prefab = Resources.Load(prefabPath) as GameObject;
 		var character = Instantiate(prefab, parent).GetComponent<Character>();
 		character.SetData(master.charaName, master.talkMessage, master.power, master.hp);
+        character.SetSprite(master.charaSprite);
 
 		return character;
 	}
