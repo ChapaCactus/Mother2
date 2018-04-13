@@ -13,6 +13,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charaName: "\u30D7\u30FC"
   talkMessage: "\u304A\u308C\u306E\u540D\u306F\u30D7\u30FC\u3002\u541B\u9054\u3068\u5171\u306B\u6226\u3046\u8005\u3060\u3002\u304A\u308C\u306F\u30CD\u30B9\u306B\u5F93\u3046\u3002"
-  charaSprite: {fileID: 21300000, guid: b2ea95c09d45f47d3bbafa8a9669702c, type: 3}
+  charaSprites:
+  - {fileID: 21300000, guid: 30a9dce79243943e98991e3527735b7b, type: 3}
+  - {fileID: 21300000, guid: 489420ad98d554acda669abc45c2d4ff, type: 3}
   hp: 60
   power: 2

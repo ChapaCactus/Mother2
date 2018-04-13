@@ -8,7 +8,7 @@ public class CharacterMaster : ScriptableObject
 	public string charaName;
 	public string talkMessage;
 
-	public Sprite charaSprite;
+	public List<Sprite> charaSprites;
 
 	public int hp;
 	public int power;

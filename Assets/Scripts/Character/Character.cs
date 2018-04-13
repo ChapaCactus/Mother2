@@ -27,7 +27,7 @@ public abstract class Character : MonoBehaviour
 	{
 		var master = LoadMaster(_charaID);
 		SetData(master.charaName, master.talkMessage, master.power, master.hp);
-		SetSprite(master.charaSprite);
+		SetSprites(master.charaSprites);
 	}
 
 	public virtual void Talk()
@@ -50,9 +50,28 @@ public abstract class Character : MonoBehaviour
 		_renderer.sprite = sprite;
 	}
 
+	private void SetSprites(List<Sprite> sprites)
+	{
+		StartCoroutine(SpriteAnimation(sprites));
+	}
+
 	private CharacterMaster LoadMaster(string charaID)
 	{
 		var master = MasterLoader.LoadCharaMaster(charaID);
 		return master;
+	}
+
+	private IEnumerator SpriteAnimation(List<Sprite> sprites)
+	{
+		var playIndex = 0;
+		var wait = new WaitForSeconds(0.5f);
+		while(true)
+		{
+			_renderer.sprite = sprites[playIndex];
+			yield return wait;
+			playIndex++;
+			if (playIndex > sprites.Count - 1)
+				playIndex = 0;
+		}
 	}
 }
