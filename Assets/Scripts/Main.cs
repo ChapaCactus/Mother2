@@ -13,6 +13,14 @@ public class Main : MonoBehaviour
 
 	public void StartGame()
 	{
+		var playerPrefab = Resources.Load(Player.PrefabPath) as GameObject;
+		var player = Instantiate(playerPrefab, transform).GetComponent<Player>();
+		player.SetData("ネス", "...", 100);
+
+		var enemyPrefab = Resources.Load(Enemy.PrefabPath) as GameObject;
+		var enemy = Instantiate(enemyPrefab, transform).GetComponent<Enemy>();
+		enemy.SetData("スターマン", "オマエハ 英雄デハナク タダノムシケラナノダ！", 1000);
+
 		//var ness = new Player();
 		//ness.Name = "ネス";
 		//ness.TalkMessage = "...";
