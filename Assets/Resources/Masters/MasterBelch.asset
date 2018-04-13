@@ -14,7 +14,7 @@ MonoBehaviour:
   charaName: "\u30B2\u30C3\u30D7\u30FC"
   talkMessage: "\u30B2\u30DC\u30B2\u30DC\u30B2\u30DC\u3001\u30B2\u30DC\u30B2\u30DC\u3001\u30B2\u30ED\u30FC\u30FC\u30C3\u30D7\uFF01"
   charaSprites:
-  - {fileID: 21300000, guid: 30a9dce79243943e98991e3527735b7b, type: 3}
-  - {fileID: 21300000, guid: 489420ad98d554acda669abc45c2d4ff, type: 3}
+  - {fileID: 21300000, guid: f75545e7d439f4517904a1f90c2d7926, type: 3}
+  - {fileID: 21300000, guid: 0d028f0050c224884a5073d737f18e3b, type: 3}
   hp: 60
   power: 2
