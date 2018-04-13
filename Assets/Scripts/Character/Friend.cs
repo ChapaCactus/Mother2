@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Enemy : Character, IDamageable, ITalkable
+public class Friend : Character, IDamageable, ITalkable, IParty
 {
-	public static readonly string PrefabPath = "Prefabs/Enemy";
+	public static readonly string PrefabPath = "Prefabs/Friend";
 
 	public void Damage(int damage)
 	{
@@ -23,7 +23,7 @@ public class Enemy : Character, IDamageable, ITalkable
 	protected override void OnTriggerEnter2D(Collider2D collision)
 	{
 		var damageable = collision.GetComponent<IDamageable>();
-		if (damageable != null && damageable is IParty)
+		if (damageable != null && !(damageable is IParty))
 			damageable.Damage(Power);
 	}
 }

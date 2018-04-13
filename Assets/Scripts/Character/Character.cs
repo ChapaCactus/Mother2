@@ -5,11 +5,13 @@ using UnityEngine.Assertions;
 
 public abstract class Character : MonoBehaviour
 {
-	public string Name { get; private set; }
-	public string TalkMessage { get; private set; }
+	public string Name { get; protected set; }
+	public string TalkMessage { get; protected set; }
 
-	public int Power { get; private set; }
-	public int HP { get; private set; }
+	public int Power { get; protected set; }
+	public int HP { get; protected set; }
+
+	public bool IsDead { get { return HP <= 0; } }
 
 	public virtual void Talk()
 	{

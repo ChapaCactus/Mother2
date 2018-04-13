@@ -23,11 +23,11 @@ public class Main : MonoBehaviour
 	public void StartGame()
 	{
 		var ness = CreateCharacter(Player.PrefabPath, transform, "ネス", "...", 5, 100) as Player;
-		var paula = CreateCharacter(Player.PrefabPath, transform, "ポーラ", "…わたしもちょっとくらいならアブナイ超能力を使えるのよ。", 2, 60) as Player;
-		var jeff = CreateCharacter(Player.PrefabPath, transform, "ジェフ", "説明はいらないよ。ぼくはジェフ。きみたちに呼ばれて来たんだ。", 3, 70) as Player;
-		var poo = CreateCharacter(Player.PrefabPath, transform, "プー", "おれの名はプー。君達と共に戦う者だ。おれはネスに従う。", 7, 120) as Player;
-		var starman = CreateCharacter(Enemy.PrefabPath, transform, "スターマン", "オマエハ 英雄デハナク タダノムシケラナノダ！", 10, 200) as Enemy;
-		var masterBelch = CreateCharacter(Enemy.PrefabPath, transform, "ゲップー", "ゲボゲボゲボ、ゲボゲボ、ゲローーップ！", 20, 300) as Enemy;
+		var paula = CreateCharacter(Friend.PrefabPath, transform, "ポーラ", "…わたしもちょっとくらいならアブナイ超能力を使えるのよ。", 2, 60) as Friend;
+		var jeff = CreateCharacter(Friend.PrefabPath, transform, "ジェフ", "説明はいらないよ。ぼくはジェフ。きみたちに呼ばれて来たんだ。", 3, 70) as Friend;
+		var poo = CreateCharacter(Friend.PrefabPath, transform, "プー", "おれの名はプー。君達と共に戦う者だ。おれはネスに従う。", 7, 120) as Friend;
+		//var starman = CreateCharacter(Enemy.PrefabPath, transform, "スターマン", "オマエハ 英雄デハナク タダノムシケラナノダ！", 10, 200) as Enemy;
+		//var masterBelch = CreateCharacter(Enemy.PrefabPath, transform, "ゲップー", "ゲボゲボゲボ、ゲボゲボ、ゲローーップ！", 20, 300) as Enemy;
 		var mama = CreateCharacter(NPC.PrefabPath, transform, "ママ", "イエーイ！ファイト！ファ・イ・ト♪", 0, 0) as NPC;
 		var mrSaturn = CreateCharacter(NPC.PrefabPath, transform, "どせいさん", "ぽえ〜ん", 0, 0) as NPC;
 	}
