@@ -15,12 +15,8 @@ public class Player : Character, IDamageable, ITalkable, IParty
 
     private void Update()
     {
-        var h = Input.GetAxis("Horizontal");
-        var v = Input.GetAxis("Vertical");
-        if (Mathf.Abs(h) < 0.3f)
-            h = 0;
-        if (Mathf.Abs(v) < 0.3f)
-            v = 0;
+        var h = Input.GetAxisRaw("Horizontal");
+        var v = Input.GetAxisRaw("Vertical");
 
         var movement = new Vector2(h * MoveBuff, v * MoveBuff);
 
