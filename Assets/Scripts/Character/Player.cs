@@ -7,6 +7,17 @@ public class Player : Character, IDamageable, ITalkable, IParty
 {
 	public static readonly string PrefabPath = "Prefabs/Player";
 
+	private const float MoveBuff = 0.05f;
+
+	private void Update()
+	{
+		var h = Input.GetAxis("Horizontal");
+		var v = Input.GetAxis("Vertical");
+		var movement = new Vector2(h * MoveBuff, v * MoveBuff);
+
+		Move(movement);
+	}
+
 	public void Damage(int damage)
 	{
 		if (IsDead) return;
