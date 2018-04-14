@@ -1,58 +1,63 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Player : Character, IDamageable, ITalkable, IParty
 {
-	public static readonly string PrefabPath = "Prefabs/Player";
+    [SerializeField]
+    private List<Friend> _friends;
 
-	private const float MoveBuff = 0.05f;
+    public static readonly string PrefabPath = "Prefabs/Player";
 
-	private void Update()
-	{
-		var h = Input.GetAxis("Horizontal");
-		var v = Input.GetAxis("Vertical");
-		var movement = new Vector2(h * MoveBuff, v * MoveBuff);
+    private const float MoveBuff = 0.05f;
 
-		if (movement != Vector2.zero)
-		{
-			Move(movement);
-		}
-	}
+    private void Update()
+    {
+        var h = Input.GetAxis("Horizontal");
+        var v = Input.GetAxis("Vertical");
+        var movement = new Vector2(h * MoveBuff, v * MoveBuff);
 
-	public void Damage(int damage)
-	{
-		if (IsDead) return;
+        if (movement != Vector2.zero)
+        {
+            Move(movement);
+        }
+    }
 
-		HP -= damage;
-		Debug.Log(Name + "が、" + damage + "を受けた");
+    public void Damage(int damage)
+    {
+        if (IsDead) return;
 
-		if (IsDead)
-		{
-			HP = 0;
-			Debug.Log(Name + "は、力尽きた。");
-		}
-	}
+        HP -= damage;
+        Debug.Log(Name + "が、" + damage + "を受けた");
 
-	private void Move(Vector2 movement)
-	{
-		transform.localPosition += (Vector3)movement;
-		CharacterManager.I.onPlayerMoved(movement);
-	}
+        if (IsDead)
+        {
+            HP = 0;
+            Debug.Log(Name + "は、力尽きた。");
+        }
+    }
 
-	protected override void OnTriggerEnter2D(Collider2D collision)
-	{
-		var damageable = collision.GetComponent<IDamageable>();
-		if (damageable != null && !(damageable is IParty))
-			damageable.Damage(Power);
+    private void Move(Vector2 movement)
+    {
+        transform.localPosition += (Vector3)movement;
+        CharacterManager.I.onPlayerMoved(movement);
+    }
 
-		var talkable = collision.GetComponent<ITalkable>();
-		if (talkable != null)
-			talkable.Talk();
-	}
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        var damageable = collision.GetComponent<IDamageable>();
+        if (damageable != null && !(damageable is IParty))
+            damageable.Damage(Power);
 
-	protected override void Prepare()
-	{
-	}
+        var talkable = collision.GetComponent<ITalkable>();
+        if (talkable != null)
+            talkable.Talk();
+    }
+
+    protected override void Prepare()
+    {
+        Assert.IsNotNull(_friends);
+    }
 }
