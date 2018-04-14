@@ -21,6 +21,11 @@ public class Player : Character, IDamageable, ITalkable, IParty
 		}
 	}
 
+	private void Move(Vector2 move)
+	{
+		transform.localPosition += (Vector3)move;
+	}
+
 	protected override void OnTriggerEnter2D(Collider2D collision)
 	{
 		var damageable = collision.GetComponent<IDamageable>();
