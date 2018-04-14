@@ -21,6 +21,8 @@ public abstract class Character : MonoBehaviour
     private void Awake()
     {
         _renderer = GetComponent<SpriteRenderer>();
+
+		Prepare();
     }
 
 	private void Start()
@@ -76,4 +78,6 @@ public abstract class Character : MonoBehaviour
 				playIndex = 0;
 		}
 	}
+
+	protected abstract void Prepare();
 }

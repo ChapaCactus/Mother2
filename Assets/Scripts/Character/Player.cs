@@ -15,7 +15,10 @@ public class Player : Character, IDamageable, ITalkable, IParty
 		var v = Input.GetAxis("Vertical");
 		var movement = new Vector2(h * MoveBuff, v * MoveBuff);
 
-		Move(movement);
+		if (movement != Vector2.zero)
+		{
+			Move(movement);
+		}
 	}
 
 	public void Damage(int damage)
@@ -32,9 +35,10 @@ public class Player : Character, IDamageable, ITalkable, IParty
 		}
 	}
 
-	private void Move(Vector2 move)
+	private void Move(Vector2 movement)
 	{
-		transform.localPosition += (Vector3)move;
+		transform.localPosition += (Vector3)movement;
+		CharacterManager.I.onPlayerMoved(movement);
 	}
 
 	protected override void OnTriggerEnter2D(Collider2D collision)
@@ -46,5 +50,9 @@ public class Player : Character, IDamageable, ITalkable, IParty
 		var talkable = collision.GetComponent<ITalkable>();
 		if (talkable != null)
 			talkable.Talk();
+	}
+
+	protected override void Prepare()
+	{
 	}
 }

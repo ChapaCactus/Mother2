@@ -27,4 +27,8 @@ public class Enemy : Character, IDamageable, ITalkable
 		if (damageable != null && damageable is IParty)
 			damageable.Damage(Power);
 	}
+
+	protected override void Prepare()
+	{
+	}
 }
