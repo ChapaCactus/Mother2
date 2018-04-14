@@ -2,11 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Assertions;
 
+[RequireComponent(typeof(CanvasGroup))]
 public class TextBox : SingletonMonoBehaviour<TextBox>
 {
 	[SerializeField]
 	private Text _text;
+
+	private CanvasGroup _canvasGroup;
 
 	private float _showTimer;
 
@@ -16,6 +20,10 @@ public class TextBox : SingletonMonoBehaviour<TextBox>
 
 	private void Awake()
 	{
+		Assert.IsTrue(gameObject.activeSelf);
+
+		_canvasGroup = GetComponent<CanvasGroup>();
+
 		SetVisible(false);
 	}
 
@@ -33,7 +41,12 @@ public class TextBox : SingletonMonoBehaviour<TextBox>
 
 	public void SetVisible(bool visible)
 	{
-		gameObject.SetActive(visible);
+		if (_canvasGroup == null) return;
+		if (_text == null) return;
+
+		_canvasGroup.alpha = visible ? 1 : 0;
+		_canvasGroup.interactable = visible;
+		_canvasGroup.blocksRaycasts = visible;
 
 		if (!visible)
 			_text.text = "";
