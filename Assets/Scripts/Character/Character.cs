@@ -32,6 +32,8 @@ public abstract class Character : MonoBehaviour
 
 	public virtual void Talk()
 	{
+		TextBox.I.SetText(TalkMessage);
+
 		Debug.Log(Name + " 「" + TalkMessage + "」");
 	}
 
