@@ -11,12 +11,17 @@ public class Player : Character, IDamageable, ITalkable, IParty
 
     public static readonly string PrefabPath = "Prefabs/Player";
 
-    private const float MoveBuff = 0.05f;
+    private const float MoveBuff = 0.03f;
 
     private void Update()
     {
         var h = Input.GetAxis("Horizontal");
         var v = Input.GetAxis("Vertical");
+        if (Mathf.Abs(h) < 0.3f)
+            h = 0;
+        if (Mathf.Abs(v) < 0.3f)
+            v = 0;
+
         var movement = new Vector2(h * MoveBuff, v * MoveBuff);
 
         if (movement != Vector2.zero)
