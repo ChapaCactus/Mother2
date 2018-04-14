@@ -12,6 +12,11 @@ public class Friend : Character, IDamageable, ITalkable, IParty
 
 	public static readonly string PrefabPath = "Prefabs/Friend";
 
+	private void OnDisable()
+	{
+        CharacterManager.I.onPlayerMoved -= OnPlayerMoved;
+	}
+
 	public void Damage(int damage)
 	{
 		if (IsDead) return;
