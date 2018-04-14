@@ -52,7 +52,7 @@ public class Player : Character, IDamageable, ITalkable, IParty
             damageable.Damage(Power);
 
         var talkable = collision.GetComponent<ITalkable>();
-        if (talkable != null)
+        if (talkable != null && !(talkable is IParty))
             talkable.Talk();
     }
 

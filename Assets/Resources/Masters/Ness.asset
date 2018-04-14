@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Ness
   m_EditorClassIdentifier: 
   charaName: "\u30CD\u30B9"
-  talkMessage: 
+  talkMessage: '...'
   charaSprites:
   - {fileID: 21300000, guid: 30a9dce79243943e98991e3527735b7b, type: 3}
   - {fileID: 21300000, guid: 489420ad98d554acda669abc45c2d4ff, type: 3}

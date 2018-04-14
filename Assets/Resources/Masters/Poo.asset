@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: Poo
   m_EditorClassIdentifier: 
   charaName: "\u30D7\u30FC"
-  talkMessage: "\u304A\u308C\u306E\u540D\u306F\u30D7\u30FC\u3002\u541B\u9054\u3068\u5171\u306B\u6226\u3046\u8005\u3060\u3002\u304A\u308C\u306F\u30CD\u30B9\u306B\u5F93\u3046\u3002"
+  talkMessage: "\u304A\u308C\u306E\u306A\u306F\u30D7\u30FC\u3002\u304D\u307F\u305F\u3061\u3068\u3068\u3082\u306B\u305F\u305F\u304B\u3046\u3082\u306E\u3060\u3002\u304A\u308C\u306F\u30CD\u30B9\u306B\u5F93\u3046\u3002"
   charaSprites:
   - {fileID: 21300000, guid: 6897a5b32b0e8477da6ac38c7438d222, type: 3}
   - {fileID: 21300000, guid: 33adb5a9dfda44bd79ca05b9535f4775, type: 3}

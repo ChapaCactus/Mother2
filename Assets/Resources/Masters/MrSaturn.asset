@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Name: MrSaturn
   m_EditorClassIdentifier: 
   charaName: "\u3069\u305B\u3044\u3055\u3093"
-  talkMessage: "\u307D\u3048\u301C\u3093"
+  talkMessage: "\u307D\u3048\u30FC\u3093"
   charaSprites:
   - {fileID: 21300000, guid: 4a1975f469d8647f1a0fe35a479cfd9d, type: 3}
   - {fileID: 21300000, guid: ad1fedee9e37f455ea7e2120c326da86, type: 3}
