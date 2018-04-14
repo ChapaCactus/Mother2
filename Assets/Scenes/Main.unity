@@ -614,7 +614,7 @@ Prefab:
     - target: {fileID: 114269470285479414, guid: 96260f055d30f40d29ff7ff0db457bc2,
         type: 2}
       propertyPath: _followDelay
-      value: 60
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96260f055d30f40d29ff7ff0db457bc2, type: 2}
@@ -710,7 +710,7 @@ Prefab:
     - target: {fileID: 114269470285479414, guid: 96260f055d30f40d29ff7ff0db457bc2,
         type: 2}
       propertyPath: _followDelay
-      value: 40
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96260f055d30f40d29ff7ff0db457bc2, type: 2}
