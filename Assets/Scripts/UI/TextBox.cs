@@ -14,7 +14,7 @@ public class TextBox : SingletonMonoBehaviour<TextBox>
 
 	private float _showTimer;
 
-	private const float DefaultTimerSec = 5f;
+	private const float DefaultTimerSec = 3f;
 
 	public bool IsRunningTimer { get { return (_showTimer > 0); } }
 
