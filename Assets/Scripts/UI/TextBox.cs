@@ -14,6 +14,11 @@ public class TextBox : SingletonMonoBehaviour<TextBox>
 
 	public bool IsRunningTimer { get { return (_showTimer > 0); } }
 
+	private void Awake()
+	{
+		SetVisible(false);
+	}
+
 	private void Update()
 	{
 		if (!IsRunningTimer) return;
@@ -29,6 +34,9 @@ public class TextBox : SingletonMonoBehaviour<TextBox>
 	public void SetVisible(bool visible)
 	{
 		gameObject.SetActive(visible);
+
+		if (!visible)
+			_text.text = "";
 	}
 
 	public void SetText(string message)
