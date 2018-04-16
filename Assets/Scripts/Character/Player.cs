@@ -18,9 +18,9 @@ public class Player : Character, IDamageable, ITalkable, IParty
         var h = Input.GetAxisRaw("Horizontal");
         var v = Input.GetAxisRaw("Vertical");
 
-        var movement = new Vector2(h * MoveBuff, v * MoveBuff);
+        var movement = new Vector3(h * MoveBuff, v * MoveBuff, 0);
 
-        if (movement != Vector2.zero)
+        if (movement != Vector3.zero)
         {
             Move(movement);
         }
@@ -40,9 +40,9 @@ public class Player : Character, IDamageable, ITalkable, IParty
         }
     }
 
-    private void Move(Vector2 movement)
+    private void Move(Vector3 movement)
     {
-        transform.localPosition += (Vector3)movement;
+        transform.localPosition += movement;
         CharacterManager.I.onPlayerMoved(movement);
     }
 
