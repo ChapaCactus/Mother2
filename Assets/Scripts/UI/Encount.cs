@@ -21,12 +21,13 @@ public class Encount : SingletonMonoBehaviour<Encount>
         Assert.IsNotNull(_animator);
     }
 
-    public void Play()
+    public void Play(Action onEnd)
     {
         if (_animator == null) return;
 
         _image.enabled = true;
 
+        _onEnd = onEnd;
         _animator.Play("Encount");
     }
 
@@ -41,10 +42,5 @@ public class Encount : SingletonMonoBehaviour<Encount>
         if (_onEnd == null) return;
 
         _onEnd();
-    }
-
-    public void SetOnEnd(Action onEnd)
-    {
-        _onEnd = onEnd;
     }
 }
