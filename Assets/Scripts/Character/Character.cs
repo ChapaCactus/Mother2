@@ -71,7 +71,8 @@ public abstract class Character : MonoBehaviour
 		var wait = new WaitForSeconds(0.5f);
 		while(true)
 		{
-			_renderer.sprite = sprites[playIndex];
+            var sprite = sprites[playIndex];
+            SetSprite(sprite);
 			yield return wait;
 			playIndex++;
 			if (playIndex > sprites.Count - 1)
