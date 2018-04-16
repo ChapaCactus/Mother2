@@ -51,11 +51,18 @@ public abstract class Character : MonoBehaviour
 
 	private void SetSprite(Sprite sprite)
 	{
+        Assert.IsNotNull(_renderer);
+        if (_renderer == null) return;
+
 		_renderer.sprite = sprite;
 	}
 
 	private void SetSprites(List<Sprite> sprites)
 	{
+        Assert.IsNotNull(sprites);
+        if (sprites == null) return;
+        if (sprites.Count == 0) return;
+
 		StartCoroutine(SpriteAnimation(sprites));
 	}
 
