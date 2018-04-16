@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
@@ -8,6 +9,7 @@ public class Encount : SingletonMonoBehaviour<Encount>
     [SerializeField]
     private Animator _animator;
 
+    private Action _onEnd;
 
     private void Awake()
     {
@@ -23,6 +25,13 @@ public class Encount : SingletonMonoBehaviour<Encount>
 
     public void OnEnd()
     {
-        Debug.Log("エンカウントアニメ終了");
+        if (_onEnd == null) return;
+
+        _onEnd();
+    }
+
+    public void SetOnEnd(Action onEnd)
+    {
+        _onEnd = onEnd;
     }
 }
