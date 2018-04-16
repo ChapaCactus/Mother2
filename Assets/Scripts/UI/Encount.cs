@@ -12,7 +12,6 @@ public class Encount : MonoBehaviour
     private void Awake()
     {
         Assert.IsNotNull(_animator);
-        Play();
     }
 
     public void Play()
