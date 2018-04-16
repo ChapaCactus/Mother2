@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public class Encount : MonoBehaviour
+public class Encount : SingletonMonoBehaviour<Encount>
 {
     [SerializeField]
     private Animator _animator;
