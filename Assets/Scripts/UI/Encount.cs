@@ -3,9 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.UI;
 
 public class Encount : SingletonMonoBehaviour<Encount>
 {
+    [SerializeField]
+    private Image _image;
+
     [SerializeField]
     private Animator _animator;
 
@@ -13,6 +17,7 @@ public class Encount : SingletonMonoBehaviour<Encount>
 
     private void Awake()
     {
+        Assert.IsNotNull(_image);
         Assert.IsNotNull(_animator);
     }
 
@@ -20,7 +25,15 @@ public class Encount : SingletonMonoBehaviour<Encount>
     {
         if (_animator == null) return;
 
+        _image.enabled = true;
+
         _animator.Play("Encount");
+    }
+
+    public void Hide()
+    {
+        _image.enabled = false;
+        _animator.Play("Empty");
     }
 
     public void OnEnd()
