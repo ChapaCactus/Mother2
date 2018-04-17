@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
+using System.Linq;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Player : Character, IDamageable, ITalkable, IParty
@@ -60,5 +61,14 @@ public class Player : Character, IDamageable, ITalkable, IParty
     protected override void Prepare()
     {
         Assert.IsNotNull(_friends);
+
+        Vector2 lastPosition = SavedataManager.LoadLastPosition();
+        transform.localPosition = lastPosition;
+        _friends.ForEach(f => f.transform.localPosition = lastPosition);
+    }
+
+    private void OnApplicationQuit()
+    {
+        SavedataManager.SaveLastPosition(transform.localPosition);
     }
 }
