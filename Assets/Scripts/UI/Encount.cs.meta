@@ -5,7 +5,10 @@ licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - _image: {fileID: 114943280516303774, guid: 6cfd320cb6c93f44193d50fc32d3bc03, type: 2}
+  - _animator: {fileID: 95855014230264048, guid: 6cfd320cb6c93f44193d50fc32d3bc03,
+      type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
