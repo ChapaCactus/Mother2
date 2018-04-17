@@ -59,7 +59,13 @@ public class Player : Character, IDamageable, ITalkable, IParty
     {
         var damageable = collision.GetComponent<IDamageable>();
         if (damageable != null && !(damageable is IParty))
-            damageable.Damage(Power);
+        { 
+            Encount.I.Play(() =>
+            {
+                damageable.Damage(Power);
+                Encount.I.Hide();
+            });
+        }
 
         var talkable = collision.GetComponent<ITalkable>();
         if (talkable != null && !(talkable is IParty))
