@@ -1073,6 +1073,7 @@ GameObject:
   - component: {fileID: 1173704492}
   - component: {fileID: 1173704491}
   - component: {fileID: 1173704490}
+  - component: {fileID: 1173704494}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1103,7 +1104,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.73333335, g: 0.8000001, b: 0.20784315, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -1114,7 +1115,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 3
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1143,12 +1144,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1173704494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1173704489}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b81f2325f2eaf4bee91aa0565f919ba9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _player: {fileID: 1427577499}
 --- !u!114 &1397838117 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114269470285479414, guid: 96260f055d30f40d29ff7ff0db457bc2,
     type: 2}
   m_PrefabInternal: {fileID: 302790880}
   m_Script: {fileID: 11500000, guid: 994bdb76a1dc14cf383901b567429510, type: 3}
+--- !u!114 &1427577499 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114705317860021504, guid: 8eeb4d38677d141409b7ec4902b8ec17,
+    type: 2}
+  m_PrefabInternal: {fileID: 1752888179}
+  m_Script: {fileID: 11500000, guid: c2cb9b85d76fe49a9b8890db6fc19b57, type: 3}
 --- !u!1001 &1455381721
 Prefab:
   m_ObjectHideFlags: 0
