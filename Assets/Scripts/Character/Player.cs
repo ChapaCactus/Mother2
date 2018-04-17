@@ -10,7 +10,10 @@ public class Player : Character, IDamageable, ITalkable, IParty
     [SerializeField]
     private List<Friend> _friends;
 
+    private NPC _targetNPC = null;
+
     public static readonly string PrefabPath = "Prefabs/Player";
+    public static readonly string PlayerTag = "Player";
 
     private const float MoveBuff = 0.03f;
 
@@ -24,6 +27,11 @@ public class Player : Character, IDamageable, ITalkable, IParty
         if (movement != Vector3.zero)
         {
             Move(movement);
+        }
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            TalkToNPC();
         }
     }
 
@@ -55,20 +63,29 @@ public class Player : Character, IDamageable, ITalkable, IParty
 
         var talkable = collision.GetComponent<ITalkable>();
         if (talkable != null && !(talkable is IParty))
-            talkable.Talk();
+            _targetNPC = collision.GetComponent<NPC>();
     }
 
-    protected override void Prepare()
+	private void OnTriggerExit2D(Collider2D collision)
+	{
+        var talkable = collision.GetComponent<ITalkable>();
+        if (talkable != null && !(talkable is IParty))
+            _targetNPC = null;
+	}
+
+    private void TalkToNPC()
+    {
+        if (_targetNPC == null) return;
+
+        _targetNPC.Talk();
+    }
+
+	protected override void Prepare()
     {
         Assert.IsNotNull(_friends);
 
         Vector2 lastPosition = SavedataManager.LoadLastPosition();
         transform.localPosition = lastPosition;
         _friends.ForEach(f => f.transform.localPosition = lastPosition);
-    }
-
-    private void OnApplicationQuit()
-    {
-        SavedataManager.SaveLastPosition(transform.localPosition);
     }
 }
