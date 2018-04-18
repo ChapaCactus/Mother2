@@ -1413,6 +1413,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 1134663844241420, guid: f414f58a53eb1684f8c2a5bb4b8489a8, type: 2}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f414f58a53eb1684f8c2a5bb4b8489a8, type: 2}
   m_IsPrefabParent: 0

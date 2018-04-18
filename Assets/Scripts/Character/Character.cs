@@ -10,13 +10,15 @@ public abstract class Character : MonoBehaviour
 
     private SpriteRenderer _renderer;
 
-	public string Name { get; protected set; }
-	public string TalkMessage { get; protected set; }
+	public string Name { get { return Master.charaName; } }
+	public string TalkMessage { get { return Master.talkMessage; } }
 
-	public int Power { get; protected set; }
+	public int Power { get { return Master.power; } }
 	public int HP { get; protected set; }
 
-    public List<SkillMaster> Skills { get; protected set; } 
+    public List<SkillMaster> Skills { get { return Master.skills; } } 
+
+    public CharacterMaster Master { get; private set; }
 
 	public bool IsDead { get { return HP <= 0; } }
 
@@ -30,8 +32,8 @@ public abstract class Character : MonoBehaviour
 	private void Start()
 	{
 		var master = LoadMaster(_charaID);
-		SetData(master.charaName, master.talkMessage, master.power, master.hp);
-        SetSkills(master.skills);
+        Master = master;
+        SetHP(Master.hp);
         SetSprites(master.charaSprites);
 	}
 
@@ -47,25 +49,15 @@ public abstract class Character : MonoBehaviour
     protected void CreateParticle(SkillMaster skill, Vector3 startPosition)
     {
         var particlePrefab = skill.particle.particlePrefab;
-        var particle = Instantiate(particlePrefab, transform);
-        particle.transform.position = startPosition;
+        var parent = ParticleManager.I.transform;
+        var particle = Instantiate(particlePrefab, parent);
+        particle.transform.localPosition = startPosition;
         particle.Play();
     }
 
-	private void SetData(string name, string talkMessage, int power, int hp)
-	{
-		Name = name;
-		TalkMessage = talkMessage;
-		Power = power;
-		HP = hp;
-	}
-
-    private void SetSkills(List<SkillMaster> skills)
+    private void SetHP(int hp)
     {
-        Assert.IsNotNull(skills);
-        if (skills == null) return;
-
-        Skills = skills;
+        HP = hp;
     }
 
 	private void SetSprite(Sprite sprite)
