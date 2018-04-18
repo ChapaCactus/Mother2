@@ -91,7 +91,12 @@ public class Player : Character, IDamageable, ITalkable, IParty
         Assert.IsNotNull(_friends);
 
         Vector2 lastPosition = SavedataManager.LoadLastPosition();
-        transform.localPosition = lastPosition;
-        _friends.ForEach(f => f.transform.localPosition = lastPosition);
+        SetPosition(lastPosition);
+    }
+
+    private void SetPosition(Vector2 position)
+    {
+        transform.localPosition = position;
+        _friends.ForEach(f => f.transform.localPosition = position);
     }
 }
