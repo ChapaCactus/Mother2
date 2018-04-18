@@ -47,14 +47,14 @@ TagManager:
   - name: Enemy
     uniqueID: 2252120095
     locked: 0
+  - name: NPC
+    uniqueID: 3531178399
+    locked: 0
   - name: Friend
     uniqueID: 430602019
     locked: 0
   - name: Player
     uniqueID: 924738209
-    locked: 0
-  - name: NPC
-    uniqueID: 3531178399
     locked: 0
   - name: Effect
     uniqueID: 3813909231
