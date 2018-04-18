@@ -1292,12 +1292,12 @@ Prefab:
     - target: {fileID: 114152799872244794, guid: e879fefd7a6d1ed4f808a898c6fefaa9,
         type: 2}
       propertyPath: _nextScene_startPos.x
-      value: -8.3
+      value: -8.5
       objectReference: {fileID: 0}
     - target: {fileID: 114152799872244794, guid: e879fefd7a6d1ed4f808a898c6fefaa9,
         type: 2}
       propertyPath: _nextScene_startPos.y
-      value: -2
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 114152799872244794, guid: e879fefd7a6d1ed4f808a898c6fefaa9,
         type: 2}

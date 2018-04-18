@@ -11,4 +11,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79951ceeda6ada546af12fc67c104a0e, type: 3}
   m_Name: Twoson
   m_EditorClassIdentifier: 
-  startPosition: {x: -7.72, y: -2.71}
+  startPosition: {x: 10, y: 10}

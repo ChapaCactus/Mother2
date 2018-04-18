@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(SpriteRenderer))]
 public class Player : Character, IDamageable, ITalkable, IParty
@@ -35,6 +36,35 @@ public class Player : Character, IDamageable, ITalkable, IParty
         }
     }
 
+    protected override void OnTriggerEnter2D(Collider2D collision)
+    {
+        var damageable = collision.GetComponent<IDamageable>();
+        if (damageable != null && !(damageable is IParty))
+        {
+            Encount.I.Play(() =>
+            {
+                damageable.Damage(Power);
+                Encount.I.Hide();
+            });
+        }
+
+        var talkable = collision.GetComponent<ITalkable>();
+        if (talkable != null && !(talkable is IParty))
+            _targetNPC = collision.GetComponent<NPC>();
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        var talkable = collision.GetComponent<ITalkable>();
+        if (talkable != null && !(talkable is IParty))
+            _targetNPC = null;
+    }
+
+    private void OnApplicationQuit()
+    {
+        SavedataManager.SaveQuitSceneName(SceneManager.GetActiveScene().name);
+    }
+
     public void Damage(int damage)
     {
         if (IsDead) return;
@@ -54,30 +84,6 @@ public class Player : Character, IDamageable, ITalkable, IParty
         transform.localPosition += movement;
         CharacterManager.I.onPlayerMoved(movement);
     }
-
-    protected override void OnTriggerEnter2D(Collider2D collision)
-    {
-        var damageable = collision.GetComponent<IDamageable>();
-        if (damageable != null && !(damageable is IParty))
-        {
-            Encount.I.Play(() =>
-            {
-                damageable.Damage(Power);
-                Encount.I.Hide();
-            });
-        }
-
-        var talkable = collision.GetComponent<ITalkable>();
-        if (talkable != null && !(talkable is IParty))
-            _targetNPC = collision.GetComponent<NPC>();
-    }
-
-	private void OnTriggerExit2D(Collider2D collision)
-	{
-        var talkable = collision.GetComponent<ITalkable>();
-        if (talkable != null && !(talkable is IParty))
-            _targetNPC = null;
-	}
 
     private void TalkToNPC()
     {
