@@ -13,5 +13,7 @@ public class CharacterMaster : ScriptableObject
 	public int hp;
 	public int power;
 
+    public List<SkillMaster> skills = new List<SkillMaster>();
+
 	public static readonly string MasterPathHeader = "Masters";
 }

@@ -1,0 +1,15 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09ec63636ef5854459f304df95c1a284, type: 3}
+  m_Name: PkKiai
+  m_EditorClassIdentifier: 
+  skillName: "PK\u30AD\u30A2\u30A4"
+  particle: {fileID: 11400000, guid: 6ee0d7ecb753c6b44873684b71adfde9, type: 2}

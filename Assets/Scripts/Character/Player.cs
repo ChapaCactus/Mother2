@@ -45,6 +45,11 @@ public class Player : Character, IDamageable, ITalkable, IParty
             {
                 damageable.Damage(Power);
                 Encount.I.Hide();
+
+                var targetPos = collision.GetComponent<Character>().transform.localPosition;
+                var pkKiai = Skills[0];
+                CreateParticle(pkKiai, targetPos);
+
             });
         }
 

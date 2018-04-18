@@ -16,6 +16,8 @@ public abstract class Character : MonoBehaviour
 	public int Power { get; protected set; }
 	public int HP { get; protected set; }
 
+    public List<SkillMaster> Skills { get; protected set; } 
+
 	public bool IsDead { get { return HP <= 0; } }
 
     private void Awake()
@@ -29,7 +31,8 @@ public abstract class Character : MonoBehaviour
 	{
 		var master = LoadMaster(_charaID);
 		SetData(master.charaName, master.talkMessage, master.power, master.hp);
-		SetSprites(master.charaSprites);
+        SetSkills(master.skills);
+        SetSprites(master.charaSprites);
 	}
 
 	public virtual void Talk()
@@ -41,6 +44,14 @@ public abstract class Character : MonoBehaviour
 
 	protected abstract void OnTriggerEnter2D(Collider2D collision);
 
+    protected void CreateParticle(SkillMaster skill, Vector3 startPosition)
+    {
+        var particlePrefab = skill.particle.particlePrefab;
+        var particle = Instantiate(particlePrefab, transform);
+        particle.transform.position = startPosition;
+        particle.Play();
+    }
+
 	private void SetData(string name, string talkMessage, int power, int hp)
 	{
 		Name = name;
@@ -48,6 +59,14 @@ public abstract class Character : MonoBehaviour
 		Power = power;
 		HP = hp;
 	}
+
+    private void SetSkills(List<SkillMaster> skills)
+    {
+        Assert.IsNotNull(skills);
+        if (skills == null) return;
+
+        Skills = skills;
+    }
 
 	private void SetSprite(Sprite sprite)
 	{
