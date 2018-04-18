@@ -49,7 +49,6 @@ public class Player : Character, IDamageable, ITalkable, IParty
                 var targetPos = collision.GetComponent<Character>().transform.localPosition;
                 var pkKiai = Skills[0];
                 CreateParticle(pkKiai, targetPos);
-
             });
         }
 
