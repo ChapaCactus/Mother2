@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Explode : MonoBehaviour {
-
+public class Effect : MonoBehaviour
+{
 
 }

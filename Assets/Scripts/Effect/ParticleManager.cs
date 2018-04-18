@@ -12,6 +12,6 @@ public class ParticleManager : SingletonMonoBehaviour<ParticleManager>
     {
         if (_masters == null) return null;
 
-        return _masters.FirstOrDefault(master => master.key == key).particlePrefab;
+        return _masters.FirstOrDefault(master => master.name == key).particlePrefab;
     }
 }

@@ -5,7 +5,5 @@ using UnityEngine;
 [CreateAssetMenu]
 public class ParticleMaster : ScriptableObject
 {
-    public string key = "";
-
     public ParticleSystem particlePrefab;
 }
