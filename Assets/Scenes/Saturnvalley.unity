@@ -1586,11 +1586,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4206628800003896, guid: 8eeb4d38677d141409b7ec4902b8ec17, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.835
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4206628800003896, guid: 8eeb4d38677d141409b7ec4902b8ec17, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 2.511
+      value: -3.24
       objectReference: {fileID: 0}
     - target: {fileID: 4206628800003896, guid: 8eeb4d38677d141409b7ec4902b8ec17, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2002,11 +2002,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4301383366986298, guid: e879fefd7a6d1ed4f808a898c6fefaa9, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.054
+      value: -0.075
       objectReference: {fileID: 0}
     - target: {fileID: 4301383366986298, guid: e879fefd7a6d1ed4f808a898c6fefaa9, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.405
+      value: -0.085
       objectReference: {fileID: 0}
     - target: {fileID: 4301383366986298, guid: e879fefd7a6d1ed4f808a898c6fefaa9, type: 2}
       propertyPath: m_LocalPosition.z
@@ -2035,12 +2035,12 @@ Prefab:
     - target: {fileID: 114152799872244794, guid: e879fefd7a6d1ed4f808a898c6fefaa9,
         type: 2}
       propertyPath: _nextScene_startPos.x
-      value: -8.5
+      value: -7.84
       objectReference: {fileID: 0}
     - target: {fileID: 114152799872244794, guid: e879fefd7a6d1ed4f808a898c6fefaa9,
         type: 2}
       propertyPath: _nextScene_startPos.y
-      value: -1
+      value: -3.1
       objectReference: {fileID: 0}
     - target: {fileID: 114152799872244794, guid: e879fefd7a6d1ed4f808a898c6fefaa9,
         type: 2}
