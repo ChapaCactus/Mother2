@@ -184,7 +184,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &125401086
 GameObject:
@@ -601,7 +601,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &656790670
 Prefab:
@@ -1614,7 +1614,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4206628800003896, guid: 8eeb4d38677d141409b7ec4902b8ec17, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114705317860021504, guid: 8eeb4d38677d141409b7ec4902b8ec17,
         type: 2}
@@ -2154,7 +2154,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4224270333498654, guid: f414f58a53eb1684f8c2a5bb4b8489a8, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1134663844241420, guid: f414f58a53eb1684f8c2a5bb4b8489a8, type: 2}
       propertyPath: m_StaticEditorFlags
